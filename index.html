@@ -3,67 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Resume</title>
+    <title>Resume Download</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a50 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        body {
-            background-color: #FFC1E3;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
         }
         
         .download-btn {
-            background-color: #AD1457;
+            background: linear-gradient(45deg, #ff6b9d, #ff8a50);
             color: white;
+            border: none;
             padding: 15px 30px;
             font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .download-btn:hover {
-            background-color: #8E1044;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
         
-        .download-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #ff6b9d;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
-    <button class="download-btn" onclick="downloadResume()">
-        Download Resume
-    </button>
-    
+    <div class="container">
+        <h1>📄 Resume Download</h1>
+        <button class="download-btn" onclick="downloadResume()">
+            Download Resume PDF
+        </button>
+        
+        <div class="info">
+            <p><strong>Note:</strong> Make sure to replace the GitHub username and repository name in the script with your actual values.</p>
+        </div>
+    </div>
+
     <script>
         function downloadResume() {
-            // Create a temporary download link for the GitHub file
-            const link = document.createElement('a');
-            link.href = 'Vinuthna_Gadilla_Resume';
-            link.download = 'vinuthna_gadilla_resume';
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            
-            // Clean up
-            document.body.removeChild(link);
+            try {
+                // GitHub raw file URL format
+                // Replace 'YOUR_USERNAME' with your actual GitHub username
+                // Replace 'main' with your default branch name if different
+                const githubRawUrl = 'https://raw.githubusercontent.com/VinuthnaReddyGadilla/VinuthnaReddyGadilla/main/Vinuthna_Gadilla_Resume.pdf';
+                
+                // Create a temporary download link
+                const link = document.createElement('a');
+                link.href = githubRawUrl;
+                link.download = 'Vinuthna_Gadilla_Resume.pdf';
+                link.target = '_blank';
+                
+                // Append to body, click, and remove
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                console.log('Download initiated successfully');
+            } catch (error) {
+                console.error('Download failed:', error);
+                alert('Download failed. Please check the file URL and try again.');
+            }
+        }
+        
+        // Alternative function if you want to open in new tab instead of download
+        function openResume() {
+            const githubRawUrl = 'https://raw.githubusercontent.com/VinuthnaReddyGadilla/VinuthnaReddyGadilla/main/Vinuthna_Gadilla_Resume.pdf';
+            window.open(githubRawUrl, '_blank');
         }
     </script>
 </body>
