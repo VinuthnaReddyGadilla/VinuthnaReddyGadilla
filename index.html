@@ -6,11 +6,11 @@
     <title>Resume Download</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
-            background: linear-gradient(135deg, #ff6b9d 0%, #ff8a50 100%);
+            background: linear-gradient(135deg, #FF8DA1 0%, #BD0553 50%, #FF8DA1 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -18,15 +18,16 @@
         }
         
         .container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(189, 5, 83, 0.3);
             text-align: center;
+            border: 2px solid rgba(255, 141, 161, 0.3);
         }
         
         h1 {
-            background: linear-gradient(45deg, #ff6b9d, #ff8a50);
+            background: linear-gradient(45deg, #FF8DA1, #BD0553);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -51,17 +52,19 @@
         }
         
         .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(189, 5, 83, 0.5);
+            background: linear-gradient(45deg, #FF8DA1, #BD0553, #FF8DA1);
         }
         
         .info {
             margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            color: #ff6b9d;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 141, 161, 0.1), rgba(189, 5, 83, 0.05));
+            border-radius: 15px;
+            color: #BD0553;
             font-weight: 500;
+            border: 1px solid rgba(255, 141, 161, 0.2);
         }
     </style>
 </head>
@@ -73,7 +76,7 @@
         </button>
         
         <div class="info">
-            <p><strong>Note:</strong> Make sure to replace the GitHub username and repository name in the script with your actual values.</p>
+            <p><strong>⚠️ Warning:</strong> Download at your own risk - you might just end up wanting to hire me! 😉</p>
         </div>
     </div>
 
